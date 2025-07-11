@@ -1,0 +1,25 @@
+* {
+    scroll-behavior: smooth;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #050c9c 0%, #3572ef 50%, #3abef9 100%);
+}
+
+.hover-card:hover{
+    background-color: #a4e2ff77;
+    transition: all .4s ease-in-out;
+    border: 1px solid black;
+}
+
+.mobile-menu {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.mobile-menu.active {
+    max-height: 500px; /* Sesuaikan dengan kebutuhan */
+    transition: all 0.5s ease;
+}
+

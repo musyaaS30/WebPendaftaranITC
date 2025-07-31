@@ -338,7 +338,6 @@
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
             <div class="flex flex-col justify-between pt-5 pb-10 border-t border-deep-purple-accent-200 sm:flex-row">

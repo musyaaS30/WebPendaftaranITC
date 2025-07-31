@@ -1,21 +1,17 @@
 <?php
+session_start(); // Tambahkan di awal file
 require 'functions/crud.php';
 
 if (isset($_POST['daftar'])) {
     $result = createData();
 
     if ($result === true) {
-        echo "<script>
-            document.addEventListener('DOMContentLoaded', function () {
-                Swal.fire({
-                    title: 'Berhasil!',
-                    text: 'Pendaftaran berhasil dikirim!',
-                    icon: 'success',
-                    confirmButtonColor: '#3ABEF9'
-                });
-                document.querySelector('form').reset();
-            });
-        </script>";
+        // Simpan data bua sessionny
+        $_SESSION['divisi'] = $_POST['divisi'];
+        $_SESSION['username'] = $_POST['nama'];
+        
+        header("Location: success_page.php");
+        exit();
     } elseif ($result === 'duplicate') {
         echo "<script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -53,6 +49,7 @@ if (isset($_POST['daftar'])) {
     <link rel="shortcut icon" href="img/semecha3.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="image/semecha5.png" type="image/x-icon">
     <script>
         tailwind.config = {
             theme: {
